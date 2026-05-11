@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+# tensorflow (not compatible with Python 3.14 yet)
+numpy
+pillow
+requests
+python-multipart
