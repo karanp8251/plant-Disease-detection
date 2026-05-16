@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "name": "plant-doctor-ai",
   "builds": [
     {
       "src": "backend/main.py",
@@ -32,12 +31,6 @@
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "backend/main.py": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/assets/(.*)",

@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+
+# Vercel loads backend/main.py from repo root; ensure sibling modules resolve.
+_backend_dir = Path(__file__).resolve().parent
+if str(_backend_dir) not in sys.path:
+    sys.path.insert(0, str(_backend_dir))
+
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
