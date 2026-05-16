@@ -1,0 +1,4 @@
+# Model training only (train_model.py) — install in a local venv, not on Vercel
+-r requirements.txt
+
+tensorflow>=2.15.0,<3.0.0

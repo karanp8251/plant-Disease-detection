@@ -1,7 +1,31 @@
-fastapi
-uvicorn
-# tensorflow (not compatible with Python 3.14 yet)
-numpy
-pillow
-requests
-python-multipart
+# Plant Doctor AI — backend dependencies
+# Python 3.11 or 3.12 recommended
+#
+# API / Vercel:
+#   pip install -r requirements.txt
+#
+# Local dev:
+#   pip install -r requirements.txt
+#   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+#
+# Train model.h5 (local machine only):
+#   pip install -r requirements-train.txt
+
+# --- FastAPI stack (main.py) ---
+fastapi>=0.115.0,<1.0.0
+starlette>=0.40.0,<1.0.0
+pydantic>=2.7.0,<3.0.0
+python-multipart>=0.0.9,<1.0.0
+
+# --- Image + inference (model.py, main.py) ---
+numpy>=1.26.4,<2.0.0
+Pillow>=10.4.0,<12.0.0
+
+# --- Chatbot API calls (chatbot.py) ---
+requests>=2.32.0,<3.0.0
+
+# --- Local dev server (skip on Vercel; harmless if installed) ---
+uvicorn[standard]>=0.30.0,<1.0.0
+
+# TensorFlow is intentionally omitted — too large for Vercel.
+# Without it, model.py runs in mock mode. For training use requirements-train.txt.

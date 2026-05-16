@@ -15,7 +15,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/health")
+@app.get("/api/health")
+def health():
+    return {"status": "ok"}
+
+
 @app.post("/predict")
+@app.post("/api/predict")
 async def predict(file: UploadFile = File(...)):
     try:
         img = Image.open(file.file)

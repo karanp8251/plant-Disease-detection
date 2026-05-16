@@ -1,6 +1,7 @@
+import os
 import requests
 
-API_KEY = "YOUR_FREE_API_KEY"
+API_KEY = os.environ.get("OPENROUTER_API_KEY", "YOUR_FREE_API_KEY")
 
 def smart_chatbot(disease):
     prompt = f"You are an agriculture expert. Disease: {disease}. Give cause, pesticide, usage, prevention in Hindi + English."
